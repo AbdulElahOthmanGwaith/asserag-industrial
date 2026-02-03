@@ -16,7 +16,7 @@ function App() {
           <Hero />
           
           {/* Global Presence Section */}
-          <section id="about" className="py-24 bg-white">
+          <section id="about" className="py-24 bg-white scroll-mt-20">
             <div className="container mx-auto px-4">
               <div className="flex flex-col lg:flex-row items-center gap-16">
                 <div className="flex-1">
@@ -44,7 +44,7 @@ function App() {
                 <div className="flex-1 relative">
                   <div className="relative z-10 w-full h-[500px] bg-gray-200 rounded-3xl overflow-hidden shadow-2xl">
                     <img 
-                      src="/images/logo.jpeg" 
+                      src="images/logo.jpeg" 
                       alt="Industrial Excellence" 
                       className="w-full h-full object-cover"
                     />
@@ -90,7 +90,7 @@ function App() {
           <ContactForm />
 
           {/* Call to Action Section */}
-          <section id="contact" className="py-24 bg-dark relative overflow-hidden">
+          <section id="contact-cta" className="py-24 bg-dark relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary via-transparent to-transparent"></div>
             </div>
@@ -118,7 +118,7 @@ function App() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-8">
               <div className="flex items-center gap-3">
-                <img src="/images/logo.jpeg" alt="Al-Seraj Logo" className="h-10 w-auto rounded" />
+                <img src="images/logo.jpeg" alt="Al-Seraj Logo" className="h-10 w-auto rounded" />
                 <span className="text-white font-bold text-lg font-cairo">السراج للتجهيزات الصناعية</span>
               </div>
               <div className="flex gap-8 text-gray-500 font-cairo text-sm">

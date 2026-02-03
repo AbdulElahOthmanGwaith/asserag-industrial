@@ -9,7 +9,7 @@ const Hero = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
-        <source src="/videos/hero_pharma.mp4" type="video/mp4" />
+        <source src="videos/hero_pharma.mp4" type="video/mp4" />
       </video>
 
       {/* Overlay */}
@@ -25,7 +25,7 @@ const Hero = () => {
         </p>
         <div className="flex flex-col md:flex-row gap-4 animate-fade-in-up delay-500">
           <a
-            href="#contact"
+            href="#contact-form"
             className="bg-accent hover:bg-accent-dark text-white text-lg font-bold px-10 py-4 rounded-lg transition-all transform hover:scale-105 font-cairo"
           >
             تواصل معنا الآن
