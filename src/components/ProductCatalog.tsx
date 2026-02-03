@@ -8,7 +8,7 @@ const products = [
     id: 1,
     name: 'وحدات مناولة الهواء (AHU) المتخصصة',
     category: 'Eking Air',
-    image: '/images/logo.jpeg',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
     description: 'أنظمة تكييف مركزية متطورة مصممة خصيصاً لمصانع الأدوية، توفر تحكماً دقيقاً في الحرارة والرطوبة ونقاء الهواء.',
     agency: 'Eking Air - الوكيل الحصري'
   },
@@ -16,7 +16,7 @@ const products = [
     id: 2,
     name: 'أنظمة الغرف النظيفة (Turnkey Cleanrooms)',
     category: 'Unival Group',
-    image: '/images/logo.jpeg',
+    image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800',
     description: 'حلول متكاملة تشمل ألواح الساندوتش، الأبواب، والنوافذ المخصصة للمناطق العقيمة بمعايير GMP العالمية.',
     agency: 'Unival Group - شريك استراتيجي'
   },
@@ -24,7 +24,7 @@ const products = [
     id: 3,
     name: 'لوحات إنذار الحريق القابلة للعنونة',
     category: 'Asenware',
-    image: '/images/logo.jpeg',
+    image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=800',
     description: 'أنظمة سلامة ذكية توفر حماية متكاملة للمنشآت الصناعية الكبرى مع إمكانية المراقبة المركزية.',
     agency: 'Asenware - الوكيل المعتمد'
   },
@@ -32,7 +32,7 @@ const products = [
     id: 4,
     name: 'آلات تعبئة وتغليف صيدلانية',
     category: 'Unival Group',
-    image: '/images/logo.jpeg',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
     description: 'معدات إنتاج عالية الكفاءة لتعبئة الكبسولات والسوائل، مصنعة من أجود أنواع الستانلس ستيل المقاوم للصدأ.',
     agency: 'Unival Group'
   },
@@ -40,7 +40,7 @@ const products = [
     id: 5,
     name: 'أنظمة إطفاء الحريق بالغاز (FM200)',
     category: 'Asenware',
-    image: '/images/logo.jpeg',
+    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800',
     description: 'حلول إطفاء تلقائية متقدمة لحماية غرف الخوادم والمعدات الحساسة في المصانع.',
     agency: 'Asenware'
   },
@@ -48,7 +48,7 @@ const products = [
     id: 6,
     name: 'مبردات المياه الصناعية (Chillers)',
     category: 'Eking Air',
-    image: '/images/logo.jpeg',
+    image: 'https://images.unsplash.com/photo-1504328332780-bc2d079595e8?auto=format&fit=crop&q=80&w=800',
     description: 'أنظمة تبريد عالية القدرة موفرة للطاقة تدعم خطوط الإنتاج الكبيرة في الصناعات الدوائية.',
     agency: 'Eking Air'
   },
@@ -113,7 +113,7 @@ const ProductCatalog = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain p-8 group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-white font-cairo shadow-sm">
                   {product.agency || product.category}

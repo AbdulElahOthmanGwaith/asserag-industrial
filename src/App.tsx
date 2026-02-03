@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import ProductCatalog from './components/ProductCatalog';
+import ContactForm from './components/ContactForm';
 import WhatsAppButton from './components/WhatsAppButton';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -86,6 +87,7 @@ function App() {
           </section>
 
           <ProductCatalog />
+          <ContactForm />
 
           {/* Call to Action Section */}
           <section id="contact" className="py-24 bg-dark relative overflow-hidden">

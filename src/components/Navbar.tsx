@@ -27,9 +27,14 @@ const Navbar = () => {
           <a href="#contact" className="hover:text-accent transition-colors">تواصل معنا</a>
         </div>
 
-        <button className="bg-accent hover:bg-accent-dark text-white px-6 py-2 rounded-full font-cairo transition-all">
-          اطلب استشارة
-        </button>
+        <div className="flex items-center gap-4">
+          <button className="text-white hover:text-accent font-cairo text-sm border border-white/20 px-3 py-1 rounded-md transition-all">
+            English
+          </button>
+          <button className="bg-accent hover:bg-accent-dark text-white px-6 py-2 rounded-full font-cairo transition-all">
+            اطلب استشارة
+          </button>
+        </div>
       </div>
     </nav>
   );
