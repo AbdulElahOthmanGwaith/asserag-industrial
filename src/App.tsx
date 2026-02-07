@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import ProductCatalog from './components/ProductCatalog';
+import ProjectsGallery from './components/ProjectsGallery';
 import ContactForm from './components/ContactForm';
 import WhatsAppButton from './components/WhatsAppButton';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -87,6 +88,7 @@ function App() {
           </section>
 
           <ProductCatalog />
+          <ProjectsGallery />
           <ContactForm />
 
           {/* Call to Action Section */}
