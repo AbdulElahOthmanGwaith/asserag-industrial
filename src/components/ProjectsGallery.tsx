@@ -1,50 +1,53 @@
 import { MapPin, Calendar, CheckCircle2 } from 'lucide-react';
-
-const projects = [
-  {
-    id: 1,
-    title: 'تجهيز مصنع الشفاء للأدوية',
-    location: 'صنعاء، اليمن',
-    year: '2025',
-    category: 'غرف نظيفة (Cleanrooms)',
-    image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800',
-    description: 'توريد وتركيب نظام تكييف مركزي متكامل مع فلاتر HEPA وتجهيز غرف نظيفة بتصنيف Class A/B وفق معايير GMP.',
-    status: 'مكتمل'
-  },
-  {
-    id: 2,
-    title: 'نظام السلامة لمصنع الأسمنت',
-    location: 'عدن، اليمن',
-    year: '2024',
-    category: 'أنظمة حريق (Asenware)',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800',
-    description: 'تصميم وتركيب شبكة إنذار وإطفاء تلقائي باستخدام غاز FM200 لحماية غرف التحكم المركزية.',
-    status: 'مكتمل'
-  },
-  {
-    id: 3,
-    title: 'وحدة تبريد مركزية للمستودعات الطبية',
-    location: 'كيب تاون، جنوب أفريقيا',
-    year: '2024',
-    category: 'تبريد صناعي (Eking Air)',
-    image: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&q=80&w=800',
-    description: 'تركيب مبردات (Chillers) بسعة 500 طن تبريد لضمان استقرار درجات الحرارة في مخازن الأدوية الحساسة.',
-    status: 'قيد التسليم'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 const ProjectsGallery = () => {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      id: 1,
+      title: t('projects.items.project1.title'),
+      location: t('projects.items.project1.location'),
+      year: '2025',
+      category: t('services.items.cleanrooms.title'),
+      image: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800',
+      description: t('projects.items.project1.desc'),
+      status: t('projects.status.completed')
+    },
+    {
+      id: 2,
+      title: t('projects.items.project2.title'),
+      location: t('projects.items.project2.location'),
+      year: '2024',
+      category: 'Asenware Systems',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=800',
+      description: t('projects.items.project2.desc'),
+      status: t('projects.status.completed')
+    },
+    {
+      id: 3,
+      title: t('projects.items.project3.title'),
+      location: t('projects.items.project3.location'),
+      year: '2024',
+      category: 'Industrial Cooling',
+      image: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&q=80&w=800',
+      description: t('projects.items.project3.desc'),
+      status: t('projects.status.in_progress')
+    }
+  ];
+
   return (
     <section id="projects" className="py-24 bg-white scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-bold mb-4 font-cairo">
-            سجل إنجازاتنا
+            {t('projects.badge')}
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 font-cairo">مشاريعنا المتميزة</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 font-cairo">{t('projects.title')}</h2>
           <div className="w-20 h-1.5 bg-accent mx-auto mb-6"></div>
           <p className="text-text-light max-w-3xl mx-auto font-cairo text-lg">
-            نفخر بتنفيذ مشاريع استراتيجية تساهم في تطوير البنية التحتية الصناعية في المنطقة، مع الالتزام بأعلى معايير الجودة العالمية.
+            {t('projects.subtitle')}
           </p>
         </div>
 

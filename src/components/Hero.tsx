@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <section id="hero" className="relative h-screen w-full overflow-hidden">
       {/* Video Background */}
@@ -18,23 +21,23 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-4xl md:text-6xl font-black text-white mb-6 font-cairo animate-fade-in-up">
-          حلول متكاملة لمصانع الأدوية
+          {t('hero.title')}
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-10 font-cairo max-w-2xl animate-fade-in-up delay-200">
-          من استلام الأرض إلى تسليم المفتاح - خبرة صناعية ودقة صيدلانية
+          {t('hero.subtitle')}
         </p>
         <div className="flex flex-col md:flex-row gap-4 animate-fade-in-up delay-500">
           <a
             href="#contact-form"
             className="bg-accent hover:bg-accent-dark text-white text-lg font-bold px-10 py-4 rounded-lg transition-all transform hover:scale-105 font-cairo"
           >
-            تواصل معنا الآن
+            {t('hero.cta_primary')}
           </a>
           <a
             href="#services"
             className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white text-lg font-bold px-10 py-4 rounded-lg border border-white/30 transition-all font-cairo"
           >
-            استعرض خدماتنا
+            {t('hero.cta_secondary')}
           </a>
         </div>
       </div>
