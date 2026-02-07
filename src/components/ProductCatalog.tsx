@@ -1,65 +1,73 @@
 import { useState } from 'react';
 import { Search, Info, ExternalLink } from 'lucide-react';
-
-const categories = ['الكل', 'Unival Group', 'Eking Air', 'Asenware', 'تجهيزات عامة'];
-
-const products = [
-  {
-    id: 1,
-    name: 'وحدات مناولة الهواء (AHU) المتخصصة',
-    category: 'Eking Air',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
-    description: 'أنظمة تكييف مركزية متطورة مصممة خصيصاً لمصانع الأدوية، توفر تحكماً دقيقاً في الحرارة والرطوبة ونقاء الهواء.',
-    agency: 'Eking Air - الوكيل الحصري'
-  },
-  {
-    id: 2,
-    name: 'أنظمة الغرف النظيفة (Turnkey Cleanrooms)',
-    category: 'Unival Group',
-    image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800',
-    description: 'حلول متكاملة تشمل ألواح الساندوتش، الأبواب، والنوافذ المخصصة للمناطق العقيمة بمعايير GMP العالمية.',
-    agency: 'Unival Group - شريك استراتيجي'
-  },
-  {
-    id: 3,
-    name: 'لوحات إنذار الحريق القابلة للعنونة',
-    category: 'Asenware',
-    image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=800',
-    description: 'أنظمة سلامة ذكية توفر حماية متكاملة للمنشآت الصناعية الكبرى مع إمكانية المراقبة المركزية.',
-    agency: 'Asenware - الوكيل المعتمد'
-  },
-  {
-    id: 4,
-    name: 'آلات تعبئة وتغليف صيدلانية',
-    category: 'Unival Group',
-    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
-    description: 'معدات إنتاج عالية الكفاءة لتعبئة الكبسولات والسوائل، مصنعة من أجود أنواع الستانلس ستيل المقاوم للصدأ.',
-    agency: 'Unival Group'
-  },
-  {
-    id: 5,
-    name: 'أنظمة إطفاء الحريق بالغاز (FM200)',
-    category: 'Asenware',
-    image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800',
-    description: 'حلول إطفاء تلقائية متقدمة لحماية غرف الخوادم والمعدات الحساسة في المصانع.',
-    agency: 'Asenware'
-  },
-  {
-    id: 6,
-    name: 'مبردات المياه الصناعية (Chillers)',
-    category: 'Eking Air',
-    image: 'https://images.unsplash.com/photo-1504328332780-bc2d079595e8?auto=format&fit=crop&q=80&w=800',
-    description: 'أنظمة تبريد عالية القدرة موفرة للطاقة تدعم خطوط الإنتاج الكبيرة في الصناعات الدوائية.',
-    agency: 'Eking Air'
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const ProductCatalog = () => {
-  const [selectedCategory, setSelectedCategory] = useState('الكل');
+  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
 
+  const categories = [
+    { id: 'all', label: t('catalog.categories.all') },
+    { id: 'Unival Group', label: 'Unival Group' },
+    { id: 'Eking Air', label: 'Eking Air' },
+    { id: 'Asenware', label: 'Asenware' },
+    { id: 'general', label: t('catalog.categories.general') }
+  ];
+
+  const products = [
+    {
+      id: 1,
+      name: t('catalog.items.item1.name'),
+      category: 'Eking Air',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
+      description: t('catalog.items.item1.desc'),
+      agency: `Eking Air ${t('catalog.agency_suffix_exclusive')}`
+    },
+    {
+      id: 2,
+      name: t('catalog.items.item2.name'),
+      category: 'Unival Group',
+      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800',
+      description: t('catalog.items.item2.desc'),
+      agency: `Unival Group ${t('catalog.agency_suffix_partner')}`
+    },
+    {
+      id: 3,
+      name: t('catalog.items.item3.name'),
+      category: 'Asenware',
+      image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?auto=format&fit=crop&q=80&w=800',
+      description: t('catalog.items.item3.desc'),
+      agency: `Asenware ${t('catalog.agency_suffix_authorized')}`
+    },
+    {
+      id: 4,
+      name: t('catalog.items.item4.name'),
+      category: 'Unival Group',
+      image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
+      description: t('catalog.items.item4.desc'),
+      agency: 'Unival Group'
+    },
+    {
+      id: 5,
+      name: t('catalog.items.item5.name'),
+      category: 'Asenware',
+      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=800',
+      description: t('catalog.items.item5.desc'),
+      agency: 'Asenware'
+    },
+    {
+      id: 6,
+      name: t('catalog.items.item6.name'),
+      category: 'Eking Air',
+      image: 'https://images.unsplash.com/photo-1504328332780-bc2d079595e8?auto=format&fit=crop&q=80&w=800',
+      description: t('catalog.items.item6.desc'),
+      agency: 'Eking Air'
+    },
+  ];
+
   const filteredProducts = products.filter((product) => {
-    const matchesCategory = selectedCategory === 'الكل' || product.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'all' || product.category === selectedCategory || (selectedCategory === 'general' && !['Eking Air', 'Unival Group', 'Asenware'].includes(product.category));
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
@@ -68,21 +76,21 @@ const ProductCatalog = () => {
     <section id="products" className="py-24 bg-gray-50 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 font-cairo">كتالوج الوكالات العالمية</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark mb-4 font-cairo">{t('catalog.title')}</h2>
           <div className="w-20 h-1.5 bg-accent mx-auto mb-6"></div>
           <p className="text-text-light max-w-3xl mx-auto font-cairo text-lg">
-            نحن نفخر بكوننا الوكلاء والموزعين المعتمدين لأكبر الشركات العالمية في مجال التجهيزات الصناعية، مما يضمن لكم الحصول على أفضل التقنيات في اليمن وجنوب أفريقيا.
+            {t('catalog.subtitle')}
           </p>
         </div>
 
         {/* Search and Filter */}
         <div className="flex flex-col md:flex-row gap-6 mb-12 items-center justify-between">
           <div className="relative w-full md:w-96">
-            <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+            <Search className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5 rtl:right-auto rtl:left-3" />
             <input
               type="text"
-              placeholder="ابحث عن معدة أو نظام عالمي..."
-              className="w-full pr-10 pl-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-cairo"
+              placeholder={t('catalog.search_placeholder')}
+              className="w-full pr-10 pl-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all font-cairo rtl:pr-4 rtl:pl-10"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -91,15 +99,15 @@ const ProductCatalog = () => {
           <div className="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto">
             {categories.map((cat) => (
               <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                key={cat.id}
+                onClick={() => setSelectedCategory(cat.id)}
                 className={`px-6 py-2 rounded-full whitespace-nowrap font-cairo transition-all ${
-                  selectedCategory === cat
+                  selectedCategory === cat.id
                     ? 'bg-primary text-white shadow-lg'
                     : 'bg-white text-text-light border border-gray-200 hover:bg-gray-50'
                 }`}
               >
-                {cat}
+                {cat.label}
               </button>
             ))}
           </div>
@@ -115,8 +123,8 @@ const ProductCatalog = () => {
                   alt={product.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-white font-cairo shadow-sm">
-                  {product.agency || product.category}
+                <div className="absolute top-4 right-4 bg-primary/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-white font-cairo shadow-sm rtl:right-auto rtl:left-4">
+                  {product.agency}
                 </div>
               </div>
               <div className="p-6 flex flex-col flex-grow">
@@ -127,7 +135,7 @@ const ProductCatalog = () => {
                 <div className="pt-4 border-t border-gray-50 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-primary text-sm font-bold font-cairo">
                     <Info className="w-4 h-4" />
-                    <span>متوفر في اليمن وجنوب أفريقيا</span>
+                    <span>{t('catalog.availability')}</span>
                   </div>
                   <button className="text-accent hover:text-accent-dark transition-colors">
                     <ExternalLink className="w-5 h-5" />

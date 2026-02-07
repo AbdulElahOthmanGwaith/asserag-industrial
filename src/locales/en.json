@@ -69,5 +69,26 @@
         "message_min": "Message must be more than 10 characters"
       }
     }
+  },
+  "catalog": {
+    "title": "Global Agencies Catalog",
+    "subtitle": "We are proud to be authorized agents and distributors for major global companies in industrial equipment, ensuring you get the best technologies in Yemen and South Africa.",
+    "search_placeholder": "Search for global equipment or systems...",
+    "categories": {
+      "all": "All",
+      "general": "General Equipment"
+    },
+    "items": {
+      "item1": { "name": "Specialized Air Handling Units (AHU)", "desc": "Advanced central AC systems designed specifically for pharmaceutical factories, providing precise control of temperature, humidity, and air purity." },
+      "item2": { "name": "Turnkey Cleanrooms Systems", "desc": "Integrated solutions including sandwich panels, doors, and windows customized for sterile areas per global GMP standards." },
+      "item3": { "name": "Addressable Fire Alarm Panels", "desc": "Smart safety systems providing integrated protection for major industrial facilities with central monitoring capabilities." },
+      "item4": { "name": "Pharmaceutical Filling & Packaging Machines", "desc": "High-efficiency production equipment for capsule and liquid filling, manufactured from high-quality stainless steel." },
+      "item5": { "name": "FM200 Gas Fire Suppression Systems", "desc": "Advanced automatic suppression solutions protecting server rooms and sensitive equipment in factories." },
+      "item6": { "name": "Industrial Water Chillers", "desc": "High-capacity energy-efficient cooling systems supporting large production lines in pharmaceutical industries." }
+    },
+    "availability": "Available in Yemen & South Africa",
+    "agency_suffix_exclusive": " - Exclusive Agent",
+    "agency_suffix_partner": " - Strategic Partner",
+    "agency_suffix_authorized": " - Authorized Agent"
   }
 }
