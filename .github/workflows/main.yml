@@ -3,53 +3,25 @@ name: Build and Deploy
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+
+permissions:
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        
-    # Detect package manager and install dependencies
-    - name: Install Dependencies
-      run: |
-        if [ -f "pnpm-lock.yaml" ]; then
-          npm install -g pnpm
-          pnpm install
-        elif [ -f "yarn.lock" ]; then
-          yarn install
-        else
-          npm ci
-        fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
-    - name: Build
-      run: |
-        if [ -f "pnpm-lock.yaml" ]; then
-          pnpm run build
-        elif [ -f "yarn.lock" ]; then
-          yarn run build
-        else
-          npm run build
-        fi
+      - run: npm install
+      - run: npm run build
 
-    # Optional: Deploy to GitHub Pages (only on master push)
-    # This requires enabling GitHub Pages in repo settings to serve from 'gh-pages' branch
-    - name: Deploy to GitHub Pages
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
