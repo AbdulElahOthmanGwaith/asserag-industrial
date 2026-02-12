@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import ProductCatalog from './components/ProductCatalog';
+import ProjectsGallery from './components/ProjectsGallery';
 import ContactForm from './components/ContactForm';
 import WhatsAppButton from './components/WhatsAppButton';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -87,6 +88,7 @@ function App() {
           </section>
 
           <ProductCatalog />
+          <ProjectsGallery />
           <ContactForm />
 
           {/* Call to Action Section */}
@@ -106,9 +108,12 @@ function App() {
                 >
                   تواصل معنا الآن
                 </a>
-                <button className="bg-white/10 hover:bg-white/20 text-white text-lg font-bold px-12 py-4 rounded-full transition-all font-cairo backdrop-blur-md">
+                <a 
+                  href="#contact-form"
+                  className="bg-white/10 hover:bg-white/20 text-white text-lg font-bold px-12 py-4 rounded-full transition-all font-cairo backdrop-blur-md inline-block"
+                >
                   طلب عرض سعر مشروع
-                </button>
+                </a>
               </div>
             </div>
           </section>
@@ -122,9 +127,9 @@ function App() {
                 <span className="text-white font-bold text-lg font-cairo">السراج للتجهيزات الصناعية</span>
               </div>
               <div className="flex gap-8 text-gray-500 font-cairo text-sm">
-                <a href="#" className="hover:text-white transition-colors">سياسة الخصوصية</a>
-                <a href="#" className="hover:text-white transition-colors">شروط الاستخدام</a>
-                <a href="#" className="hover:text-white transition-colors">مكاتبنا العالمية</a>
+                <a href="#about" className="hover:text-white transition-colors">من نحن</a>
+                <a href="#services" className="hover:text-white transition-colors">خدماتنا</a>
+                <a href="#contact-form" className="hover:text-white transition-colors">تواصل معنا</a>
               </div>
               <p className="text-gray-500 font-cairo text-sm">© {new Date().getFullYear()} جميع الحقوق محفوظة.</p>
             </div>
